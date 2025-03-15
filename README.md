@@ -1,6 +1,6 @@
 # c_banks_flightsim
 
-Modernization of Carl Bank's 1998 flightsim
+Modernization of Carl Bank's 1998 flightsim. See his blog here: https://blog.aerojockey.com/iocccsim/
 
 TL;DR
 
