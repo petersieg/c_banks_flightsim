@@ -227,7 +227,7 @@ void setupXWindows(Display **disp, Window *win, GC *gc) {
     *win = RootWindow(*disp, 0);
     *gc = XCreateGC(*disp, *win, 0, 0);
     XSetForeground(*disp, *gc, BlackPixel(*disp, 0));
-    *win = XCreateSimpleWindow(*disp, *win, 0, 0, 384, 128, 0, 0, WhitePixel(*disp, 0));
+    *win = XCreateSimpleWindow(*disp, *win, 0, 0, 384, 384, 0, 0, WhitePixel(*disp, 0));
     XSelectInput(*disp, *win, KeyPressMask);
     XMapWindow(*disp, *win);
 }
