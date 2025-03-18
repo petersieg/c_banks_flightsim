@@ -2,6 +2,10 @@
 
 Modernization of Carl Bank's 1998 flightsim. See his blog here: https://blog.aerojockey.com/iocccsim/
 
+./compile.sh [<dir>/] - without $1 parameter, compiles banks.c from same dir. With eg: v2/ as parameter, v2/banks.c will be compiled.
+
+./run2.sh [<add.scene>] - rund banks with horizon.scene plus $1.scene
+
 TL;DR
 
 * `gcc -ansi banks.c -lm -lX11 -o banks`
