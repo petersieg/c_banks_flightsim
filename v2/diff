@@ -1,0 +1,24 @@
+412c412
+<                 if (up_down < 2) ++up_down;
+---
+>                 up_down = 1;
+415c415
+<                 if (up_down > -2) --up_down;
+---
+>                 up_down = -1;
+418c418
+<                 if (left_right < 2) ++left_right;
+---
+>                 left_right = 1;
+421c421
+<                 if (left_right > -2) --left_right;
+---
+>                 left_right = -1;
+424c424
+<                 if (speed < 2) ++speed;
+---
+>                 speed = 1;
+427c427
+<                 if (speed > -2) --speed;
+---
+>                 speed = -1;
