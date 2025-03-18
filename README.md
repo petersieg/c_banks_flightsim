@@ -2,9 +2,9 @@
 
 Modernization of Carl Bank's 1998 flightsim. See his blog here: https://blog.aerojockey.com/iocccsim/
 
-./compile.sh (<dir>/) - without $1 parameter, compiles banks.c from same dir. With eg: v2/ as parameter, v2/banks.c will be compiled.
+./compile.sh [dir/] - without $1 parameter, compiles banks.c from same dir. With eg: v2/ as parameter, v2/banks.c will be compiled. Slash is IMPORTANT!
 
-./run2.sh (<add.scene>) - rund banks with horizon.scene plus $1.scene
+./run2.sh [add.scene] - rund banks with horizon.scene plus $1.scene
 
 TL;DR
 
