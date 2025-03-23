@@ -1,0 +1,9 @@
+banks: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), for GNU/Linux 2.4.1, dynamically linked (uses shared libs), for GNU/Linux 2.4.1, not stripped
+	linux-gate.so.1 =>  (0xffffe000)
+	libm.so.6 => /lib/tls/libm.so.6 (0xb7fa3000)
+	libX11.so.6 => /usr/lib/libX11.so.6 (0xb7eb7000)
+	libc.so.6 => /lib/tls/libc.so.6 (0xb7d84000)
+	/lib/ld-linux.so.2 (0xb7fd9000)
+	libXau.so.6 => /usr/lib/libXau.so.6 (0xb7d81000)
+	libXdmcp.so.6 => /usr/lib/libXdmcp.so.6 (0xb7d7c000)
+	libdl.so.2 => /lib/tls/libdl.so.2 (0xb7d78000)
