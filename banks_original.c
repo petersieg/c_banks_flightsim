@@ -250,6 +250,10 @@ void sleepForInterval() {
 }
 
 
+
+/* Function to calculate angles and update rotation matrix */
+void calculateAngles() {
+
     /* Function to calculate cosines and sines of angles */
     void calculateTrigonometricValues() {
         /* Angle calculations. */
@@ -292,10 +296,6 @@ void sleepForInterval() {
         R33 = cos_sideTilt * cos_forwardTilt;
     }
 
-/* Function to calculate angles and update rotation matrix */
-void calculateAngles() {
-
-
     calculateTrigonometricValues();
     updateF();
     updateCompassRadians();
@@ -304,6 +304,9 @@ void calculateAngles() {
     updateRotationMatrix();
 }
 
+
+/* Function to update the display */
+void updateDisplay(Display *disp, Window win, GC gc) {
 
     /* Function to clear the window */
     void clearWindow(Display *disp, Window win) {
@@ -354,9 +357,6 @@ void calculateAngles() {
     void drawHUD(Display *disp, Window win, GC gc) {
         XDrawString(disp, win, gc, 20, 380, infoStr, 17);
     }
-
-/* Function to update the display */
-void updateDisplay(Display *disp, Window win, GC gc) {
 
     clearWindow(disp, win);
     
@@ -409,24 +409,25 @@ void handleKeyPress(Display *disp) {
         KeySym key = XLookupKeysym(&event.xkey, 0);
         switch (key) {
             case Up:
-                ++up_down;
+                if (up_down < 2) ++up_down;
                 break;
             case Down:
-                --up_down;
+                if (up_down > -2) --up_down;
                 break;
             case Left:
-                ++left_right;
+                if (left_right < 2) ++left_right;
                 break;
             case Right:
-                --left_right;
+                if (left_right > -2) --left_right;
                 break;
             case Throttle_Up:
-                ++speed;
+                if (speed < 2) ++speed;
                 break;
             case Throttle_Down:
-                --speed;
+                if (speed > -2) --speed;
                 break;
             case Enter:
+                up_down = 0;
                 left_right = 0;
                 break; /* re-center from turning */
             default:
@@ -435,6 +436,10 @@ void handleKeyPress(Display *disp) {
     }
 }
 
+
+
+/* Function to update the position and physics of the airplane */
+void updatePhysics() {
 
     void updateMomentum() {
         M += H * timeDelta;
@@ -494,9 +499,6 @@ void handleKeyPress(Display *disp) {
         v -= (W * F - T * (0.63 * m - I * 0.086 + m * E * 19 - D * 25 - 0.11 * left_right) / 107e2) * timeDelta;
     }
 
-
-/* Function to update the position and physics of the airplane */
-void updatePhysics() {
 
     updateMomentum();
     calculateInertia();
